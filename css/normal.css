@@ -1,0 +1,74 @@
+.outBody {
+  background-color: #e1a160;
+  padding: .266667rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.ym {
+  background-color: #ffffff;
+}
+
+.ym .video {
+  height: 10.533333rem;
+  overflow: hidden;
+}
+
+.ym .video video {
+  height: 100%;
+}
+
+.ym .introduce {
+  background-image: url("../images/introduce-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ym .introduce p {
+  opacity: 0;
+}
+
+.ym strong {
+  font-weight: 100;
+  background-color: #e1a160;
+}
+
+.ym .fixedBg {
+  padding-top: .006667rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.ym .fixedBg .title {
+  margin: .666667rem auto;
+}
+
+.ym .fixedBg .title img {
+  width: 100%;
+  height: 100%;
+}
+
+.ym .fixedBg .core {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: .266667rem 0;
+}
+
+.ym .fixedBg.dilemma {
+  background-image: url("../images/dilemma-cover.jpeg");
+}
+
+.ym .fixedBg.increase {
+  background-image: url("../images/increased_demand-color.jpeg");
+}
+
+.ym .fixedBg.beadhouse {
+  background-image: url("../images/beadhouse-cover.jpeg");
+}
+
+.ym .fixedBg.Respond_to_demand {
+  background-image: url("../images/respond_to_demand-cover.jpeg");
+}
+/*# sourceMappingURL=normal.css.map */

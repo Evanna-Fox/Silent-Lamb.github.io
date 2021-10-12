@@ -1,0 +1,1193 @@
+// 视频
+.video {
+  width: 100%;
+  background-color: #dec6ac;
+  video {
+    width: 100%;
+  }
+}
+// 介绍
+.introduce {
+  background: #dec6ac;
+  padding-top: .91rem;
+  padding-bottom: 1.58rem;
+  p {
+    width: 14.75rem;
+    margin: 0 auto;
+    font-size: .29rem;
+    font-family: SourceHanSerifCN;
+    font-weight: 400;
+    color: #040404;
+    line-height: .4rem;
+  }
+  p:nth-child(1),
+  p:nth-child(2) {
+    margin-bottom: .4rem;
+  }
+  p:nth-child(10) {
+    margin-top: .89rem;
+  }
+  h6 {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 400;
+    width: 14.75rem;
+    margin: 0 auto;
+    margin-top: .5rem;
+    white-space: nowrap;
+  }
+}
+// 养老院爆雷的背后：民办养老院经营困境
+.dilemma {
+  .bt {
+    position: relative;
+    width: 12rem;
+    margin: 0 auto;
+    p {
+      font-size: .45rem;
+      font-family: SourceHanSerifCN;
+    
+      color: #000000;
+      text-align: center;
+      margin-top: .74rem;
+      margin-bottom: .28rem;
+      font-weight: 600;
+    }
+    img {
+      position: absolute;
+      width: 1rem;
+      left: .4rem;
+      top: -.2rem;
+    }
+  }
+  .nr {
+    ul {
+      li {
+        > p {
+          font-size: .24rem;
+          font-family: SourceHanSerifCN;
+          font-weight: 400;
+          color: #010101;
+          width: 12rem;
+          margin: 0 auto;
+          line-height: .26rem;
+        }
+        span {
+          font-size: .15rem;
+          font-family: SourceHanSerifCN;
+          font-weight: 400;
+          color: #444444;
+          text-align: center;
+          margin-bottom: .22rem;
+          display: block;
+        }
+        .effect {
+          width: 9rem;
+          height: 7rem;
+          margin: 0 auto;
+          margin-top: .2rem;
+          margin-bottom: .17rem;
+          position: relative;
+          .wdl {
+            width: 100%;
+            margin: 0 auto;
+            transition: all 3s;
+            opacity: 1;
+          }
+          .dl {
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+            top: 0.1rem;
+            transition: all 3s;
+            opacity: 0;
+            width: 100%;
+            margin: 0 auto;
+          }
+        }
+        .effect:hover {
+          .wdl {
+            opacity: 0;
+            z-index: -1;
+          }
+          .dl {
+            z-index: 999;
+            opacity: 1;
+          }
+        }
+      }
+      .colour {
+        p {
+          color: #370000;
+        }
+      }
+      .situation {
+        img {
+          width: 7rem;
+          margin: 0 auto;
+          margin-top: .18rem;
+          margin-bottom: .19rem;
+        }
+      }
+    }
+  }
+  .nr1 {
+    width: 12rem;
+    margin: 0 auto;
+    p {
+      font-size: .24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #010101;
+      width: 12rem;
+      margin: 0 auto;
+      line-height: .26rem;
+    }
+    p:nth-child(5) {
+      margin-top: .48rem;
+    }
+  }
+}
+// 1.投资回收周期长
+.Long_period {
+  h6 {
+    width: 12rem;
+    font-size: .3rem;
+    font-family: SourceHanSerifCN;
+    text-align: center;
+    
+    color: #000000;
+    margin: 0 auto;
+    margin-top: .34rem;
+    margin-bottom: .38rem;
+  }
+  p {
+    font-size: .24rem;
+    font-family: SourceHanSerifCN;
+    font-weight: 400;
+    color: #010101;
+    width: 12rem;
+    margin: 0 auto;
+    line-height: .26rem;
+  }
+  img {
+    width: 9rem;
+    margin: 0 auto;
+    margin-top: .1rem;
+    margin-bottom: .3rem;
+  }
+  
+}
+// 2.入住率低
+.Occupancy_rate {
+  h6 {
+    width: 12rem;
+    font-size: .3rem;
+    font-family: SourceHanSerifCN;
+    text-align: center;
+    color: #000000;
+    margin: 0 auto;
+    margin-top: .34rem;
+    margin-bottom: .38rem;
+  }
+  p {
+    font-size: .24rem;
+    font-family: SourceHanSerifCN;
+    font-weight: 400;
+    color: #010101;
+    width: 12rem;
+    margin: 0 auto;
+    line-height: .26rem;
+  }
+  img {
+    width: 9rem;
+    margin: 0 auto;
+    margin-top: .38rem;
+    margin-bottom: .24rem;
+  }
+}
+// 问题紧迫：老龄化趋势下，对护理型养老需求增加
+.increase {
+  .bt {
+    position: relative;
+    width: 12rem;
+    margin: 0 auto;
+    h6 {
+      font-size: .45rem;
+      font-family: SourceHanSerifCN;
+  
+      color: #000000;
+      text-align: center;
+      margin-top: .74rem;
+      margin-bottom: .28rem;
+    }
+    img {
+      position: absolute;
+      width: .7rem;
+      left: -.1rem;
+      top: -.12rem;
+    }
+    p {
+      font-size: .24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #000000;
+      text-align: center;
+      margin-top: .39rem;
+    }
+  }
+  // 1.人口老龄化趋势加深
+  .Aging {
+    margin-top: .28rem;
+    h6 {
+      font-size: .3rem;
+      font-family: SourceHanSerifCN;
+
+      color: #000000;
+      width: 12rem;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: .06rem;
+    }
+    p {
+      font-size: .24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #000000;
+      width: 12rem;
+      margin: 0 auto;
+      line-height: .36rem;
+      > span {
+        font-size: .28rem;
+      }
+    }
+    .effect {
+      width: 6.4rem;
+      height: 7.1rem;
+      margin: 0 auto;
+      margin-top: .2rem;
+      margin-bottom: .17rem;
+      position: relative;
+      .wdl {
+        width: 6.4rem;
+        margin: 0 auto;
+        transition: all 3s;
+        opacity: 1;
+      }
+      .dl {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        top: 0;
+        transition: all 3s;
+        opacity: 0;
+        width: 6.4rem;
+        margin: 0 auto;
+      }
+    }
+    .effect:hover {
+      .wdl {
+        opacity: 0;
+        z-index: -1;
+      }
+      .dl {
+        z-index: 999;
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 6.4rem;
+      margin: 0 auto;
+      margin-top: .18rem;
+    }
+    > span {
+      font-size: .15rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #444444;
+      text-align: center;
+      display: block;
+      margin-top: -.47rem;
+    }
+  }
+  // 2.家庭空巢化，养老院、人工护理需求增加
+  .Increased_demand {
+    h6 {
+      font-size: .3rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 600;
+      color: #000000;
+      text-align: center;
+      margin: .28rem 0;
+    }
+    p {
+      font-size: .24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #000000;
+      width: 12rem;
+      margin: 0 auto;
+    }
+    p:nth-child(10) {
+      margin-bottom: .3rem;
+    }
+    img {
+      margin: .2rem auto;
+    }
+    span {
+      font-size: .15rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #444444;
+      text-align: center;
+      display: block;
+      margin-bottom: .18rem;
+    }
+  }
+}
+
+// 老人为何不愿意入住养老院？
+.beadhouse {
+  .bt {
+    position: relative;
+    width: 12rem;
+    margin: 0 auto;
+    h6 {
+      font-size: .45rem;
+      font-family: SourceHanSerifCN;
+  
+      color: #000000;
+      text-align: center;
+      margin-top: .74rem;
+      margin-bottom: .28rem;
+    }
+    img {
+      position: absolute;
+      width: .7rem;
+      left: 1.85rem;
+      top: -.12rem;
+    }
+  }
+  // 1. 护理岗位人员少，护理服务质量堪忧
+  .Few_personnel {
+    h6 {
+      font-size: .3rem;
+      font-family: SourceHanSerifCN;
+
+      color: #000000;
+      text-align: center;
+      margin-top: .35rem;
+      margin-bottom: .44rem;
+    }
+    p {
+      font-size: .24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #000000;
+      width: 12rem;
+      margin: 0 auto;
+      line-height: .3rem;
+    }
+    img {
+      margin: 0 auto;
+    }
+    span {
+      font-size: .15rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #444444;
+      text-align: center;
+      display: block;
+      margin-bottom: .18rem;
+      margin-top: .1rem;
+    }
+  }
+  // 2. 不同养老机构地区、价格差异
+  .Price_difference {
+    h6 {
+      font-size: .3rem;
+      font-family: SourceHanSerifCN;
+      
+      color: #000000;
+      text-align: center;
+      margin-top: .35rem;
+      margin-bottom: .44rem;
+    }
+    p {
+      font-size: .24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #000000;
+      width: 12rem;
+      line-height: .3rem;
+      margin: 0 auto;
+    }
+    .boxs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 9rem;
+        margin: .1rem .3rem;
+      }
+    }
+  }
+  // 3.难以负担？
+  .Unaffordable {
+    h6 {
+      font-size: .3rem;
+      font-family: SourceHanSerifCN;
+  
+      color: #000000;
+      text-align: center;
+      margin-top: .35rem;
+      margin-bottom: .44rem;
+    }
+    p {
+      font-size: .24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #000000;
+      width: 12rem;
+      margin: 0 auto;
+      line-height: .3rem;
+    }
+    img {
+      margin: .2rem auto;
+      width: 9rem;
+    }
+  }
+}
+// 发展养老机构护理型床位以响应需求
+.Respond_to_demand {
+  .bt {
+    position: relative;
+    width: 12rem;
+    margin: 0 auto;
+    h6 {
+      font-size: .45rem;
+      font-family: SourceHanSerifCN;
+      color: #000000;
+      text-align: center;
+      margin-top: .74rem;
+      margin-bottom: .28rem;
+    }
+    img {
+      position: absolute;
+      width: .7rem;
+      left: 1rem;
+      top: -.12rem;
+    }
+  }
+  .nr {
+    width: 12rem;
+    margin: 0 auto;
+
+    p {
+      font-size: .24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #000000;
+      width: 12rem;
+      margin: 0 auto;
+      line-height: .3rem;
+    }
+    img:nth-child(3) {
+      margin: 0 auto;
+      width: 8rem;
+    }
+    img:nth-child(8) {
+      width: 5rem;
+      margin-left: 1.07rem;
+    }
+  }
+}
+// 底部
+footer {
+  background-color: #dec6ac;
+  width: 100%;
+  // margin-top: .67rem;
+  padding-top: .59rem;
+  padding-bottom: .89rem;
+  position: relative;
+  ul {
+    width: 12rem;
+    margin: 0 auto;
+    li {
+      p {
+        font-size: .24rem;
+        font-family: SourceHanSerifCN;
+        font-weight: 400;
+        color: #000000;
+        width: 12rem;
+        margin: 0 auto;
+        line-height: .3rem;
+      }
+      h6 {
+        font-size: .53rem;
+        font-family: SourceHanSerifCN;
+        font-weight: 400;
+        color: #000000;
+        width: 12rem;
+        margin: 0 auto;
+      }
+      img{
+        width: 10rem;
+        margin-top: .2rem;
+
+
+      }
+    }
+    li:nth-child(1) {
+      margin-bottom: .55rem;
+    }
+    li:nth-child(2) {
+      margin-bottom: .25rem;
+      p{
+        font-size: .2rem;
+        color: #666;
+      }
+    }
+    li:nth-child(3) {
+      margin-bottom: .55rem;
+      p{
+        font-size: .2rem;
+        color: #666;
+      }
+    }
+    li:nth-child(4) {
+      margin-bottom: .55rem;
+      p{
+        font-size: .2rem;
+        color: #666;
+      }
+    }
+    li:nth-child(5) {
+      p{
+        font-size: .2rem;
+        color: #666;
+      }
+    }
+  }
+  >img {
+    position: absolute;
+    width: 5.5rem;
+    bottom: 0;
+    right: .54rem;
+  }
+}
+// 悬浮导航栏
+.suspension_nav {
+  width: 1.3rem;
+  height: 5rem;
+  background-color: #c7d3e4;
+  position: fixed;
+  left: 0;
+  top: 0;
+  ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    li {
+      width: 100%;
+      height: 25%;
+      a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: .9rem;
+        }
+        p {
+          font-size: .4rem;
+          color: #370000;
+          display: none;
+        }
+      }
+    }
+    li:hover {
+      a {
+        img {
+          display: none;
+        }
+        p {
+          display: block;
+        }
+      }
+    }
+  }
+}
+p{
+  line-height: 60px !important;
+  letter-spacing: .02rem;
+}
+
+@media screen and (max-width: 750px) {
+  p{
+    line-height: .4rem !important;
+    letter-spacing: 0;
+  }
+  .ym {
+    width: 7.5rem;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+  // 介绍
+  .introduce {
+    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
+    p {
+      width: 7.1rem;
+      font-size: 0.24rem;
+      line-height: 0.4rem;
+    }
+    p:nth-child(1),
+    p:nth-child(2) {
+      margin-bottom: 0.25rem;
+    }
+    p:nth-child(10) {
+      margin-top: 0.25rem;
+    }
+    h6 {
+      font-size: 0.45rem;
+      width: 7.1rem;
+      margin-top: 0.25rem;
+    }
+  }
+  // 养老院爆雷的背后：民办养老院经营困境
+  .dilemma {
+    .bt {
+      position: relative;
+      width: 7.1rem;
+      margin: 0 auto;
+      p {
+        width: 5rem;
+        margin: 0 auto;
+        font-size: 0.32rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+        text-align: center;
+      }
+      img {
+        position: absolute;
+        width: 1rem;
+        left: 0rem;
+        top: -0.2rem;
+      }
+    }
+    .nr {
+      ul {
+        li {
+          > p {
+            font-size: 0.24rem;
+            font-family: SourceHanSerifCN;
+            font-weight: 400;
+            color: #010101;
+            width: 7.1rem;
+            margin: 0 auto;
+            line-height: 0.4rem;
+          }
+          span {
+            font-size: 0.2rem;
+            margin-bottom: 0.22rem;
+          }
+          .effect {
+            width: 3rem;
+            height: 3rem;
+            margin: 0 auto;
+            margin-top: .2rem;
+            margin-bottom: .17rem;
+            position: relative;
+            .wdl {
+              width: 3rem;
+              margin: 0 auto;
+              transition: all 3s;
+              opacity: 1;
+            }
+            .dl {
+              position: absolute;
+              transform: translateX(-50%);
+              left: 50%;
+              top: .01rem;
+              transition: all 3s;
+              opacity: 0;
+              width: 3rem;
+              margin: 0 auto;
+            }
+          }
+          .effect:hover {
+            .wdl {
+              opacity: 0;
+              z-index: -1;
+            }
+            .dl {
+              z-index: 999;
+              opacity: 1;
+            }
+          }
+          
+        }
+        .colour {
+          p {
+            color: #370000;
+          }
+        }
+        .situation {
+          img {
+            width: 4rem;
+            margin: 0 auto;
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+          }
+        }
+      }
+    }
+    // .box {
+    //   width: 100%;
+    //   height: 3px;
+    //   background-color: #000;
+    //   margin: 33px 0px;
+    // }
+    .nr1 {
+      width: 7.1rem;
+      margin: 0 auto;
+      p {
+        font-size: 0.24rem;
+        font-family: SourceHanSerifCN;
+        font-weight: 400;
+        color: #010101;
+        width: 7.1rem;
+        margin: 0 auto;
+        line-height: 0.4rem;
+      }
+      p:nth-child(5) {
+        margin-top: 0.25rem;
+      }
+    }
+  }
+  // 1.投资回收周期长
+  .Long_period {
+    h6 {
+      width: 7.1rem;
+      font-size: 0.3rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+    p {
+      font-size: 0.24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #010101;
+      width: 7.1rem;
+      margin: 0 auto;
+      line-height: 0.4rem;
+    }
+    img {
+      width: 6rem;
+      margin: 0 auto;
+      margin-top: 0.2rem;
+      margin-bottom: 0.25rem;
+    }
+    // .box {
+    //   width: 100%;
+    //   height: 3px;
+    //   background-color: #000;
+    //   margin: 40px 0;
+    // }
+  }
+  // 2.入住率低
+  .Occupancy_rate {
+    h6 {
+      width: 7.1rem;
+      font-size: 0.3rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #000000;
+      margin: 0 auto;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
+    p {
+      font-size: 0.24rem;
+      font-family: SourceHanSerifCN;
+      font-weight: 400;
+      color: #010101;
+      width: 7.1rem;
+      margin: 0 auto;
+      line-height: 0.4rem;
+    }
+    img {
+      width: 7.1rem;
+      margin: 0 auto;
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+  // 问题紧迫：老龄化趋势下，对护理型养老需求增加
+  .increase {
+    .bt {
+      position: relative;
+      width: 7.1rem;
+      margin: 0 auto;
+      h6 {
+        width: 5rem;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 0.32rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+      }
+      img {
+        position: absolute;
+        width: 1.1rem;
+        left: -0rem;
+        top: -0.25rem;
+      }
+      p {
+        font-size: 0.24rem;
+        margin-top: 0.4rem;
+      }
+    }
+    // 1.人口老龄化趋势加深
+    .Aging {
+      margin-top: 0.25rem;
+      h6 {
+        font-size: 0.3rem;
+        font-family: SourceHanSerifCN;
+        font-weight: 500;
+        color: #000000;
+        width: 6.5rem;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 0.15rem;
+      }
+      p {
+        font-size: 0.24rem;
+        width: 7.1rem;
+        line-height: 0.4rem;
+        > span {
+          font-size: 0.27rem;
+          font-weight: 600;
+        }
+      }
+      
+      .effect {
+        width: 7.1rem;
+        height: 7.1rem;
+        margin: 0 auto;
+        margin-top: .2rem;
+        margin-bottom: .17rem;
+        position: relative;
+        .wdl {
+          width: 7.1rem;
+          margin: 0 auto;
+          transition: all 3s;
+          opacity: 1;
+        }
+        .dl {
+          position: absolute;
+          transform: translateX(-50%);
+          left: 50%;
+          top: 0px;
+          transition: all 3s;
+          opacity: 0;
+          width: 7.1rem;
+          margin: 0 auto;
+        }
+      }
+      .effect:hover {
+        .wdl {
+          opacity: 0;
+          z-index: -1;
+        }
+        .dl {
+          z-index: 999;
+          opacity: 1;
+        }
+      }
+      > span {
+        font-size: 0.2rem;
+        margin-top: -0.35rem;
+      }
+    }
+    // 2.家庭空巢化，养老院、人工护理需求增加
+    .Increased_demand {
+      h6 {
+        font-size: 0.3rem;
+        margin: 0.25rem 0;
+        font-weight: 400;
+      }
+      p {
+        font-size: 0.24rem;
+        width: 7.1rem;
+      }
+      p:nth-child(10) {
+        margin-bottom: 0.25rem;
+      }
+      img {
+        margin: 0.2rem auto;
+      }
+      img:nth-child(5) {
+        width: 6.5rem !important;
+      }
+      img:nth-child(8) {
+        width: 7.1rem !important;
+      }
+      span {
+        font-size: 0.2rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+  // 老人为何不愿意入住养老院？
+  .beadhouse {
+    .bt {
+      position: relative;
+      width: 7.1rem;
+      margin: 0 auto;
+      h6 {
+        font-size: 0.32rem;
+        width: 5rem;
+        margin: 0 auto;
+        text-align: center;
+        font-weight: 600;
+        margin-top: 0.5rem;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+      }
+      img {
+        position: absolute;
+        width: 1.2rem;
+        left: 0.5rem;
+        top: -0.45rem;
+      }
+    }
+    // 1. 护理岗位人员少，护理服务质量堪忧
+    .Few_personnel {
+      h6 {
+        font-size: 0.3rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.25rem;
+      }
+      p {
+        font-size: 0.24rem;
+        font-family: SourceHanSerifCN;
+        font-weight: 400;
+        color: #000000;
+        width: 7.1rem;
+        margin: 0 auto;
+        line-height: 0.4rem;
+      }
+      img {
+        margin: 0 auto;
+      }
+      img:nth-child(5) {
+        width: 7rem !important;
+      }
+      img:nth-child(10) {
+        width: 7rem !important;
+      }
+
+      span {
+        font-size: 0.2rem;
+        margin-bottom: 0.2rem;
+        margin-top: 0.2rem;
+      }
+    }
+    // 2. 不同养老机构地区、价格差异
+    .Price_difference {
+      h6 {
+        font-size: 0.3rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      p {
+        font-size: 0.24rem;
+        font-family: SourceHanSerifCN;
+        font-weight: 400;
+        color: #000000;
+        width: 7.1rem;
+        line-height: 0.4rem;
+        margin: 0 auto;
+      }
+      .boxs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        img {
+          width: 7rem;
+          margin: 0 0;
+        }
+      }
+    }
+    // 3.难以负担？
+    .Unaffordable {
+      h6 {
+        font-size: 0.3rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      p {
+        font-size: 0.24rem;
+        width: 7.1rem;
+        margin: 0 auto;
+        line-height: 0.4rem;
+      }
+      img {
+        margin: 0.2rem auto;
+        width: 7rem;
+      }
+    }
+  }
+  // 发展养老机构护理型床位以响应需求
+  .Respond_to_demand {
+    .bt {
+      position: relative;
+      width: 7.1rem;
+      margin: 0 auto;
+      h6 {
+        font-size: 0.32rem;
+        margin: 0 auto;
+        text-align: center;
+        width: 4.5rem;
+        font-family: SourceHanSerifCN;
+        font-weight: 500;
+        color: #000000;
+        text-align: center;
+        margin-top: 0.5rem;
+        margin-bottom: 0.25rem;
+      }
+      img {
+        position: absolute;
+        width: 1.1rem;
+        left: 0rem;
+        top: -0.4rem;
+      }
+    }
+    .nr {
+      width: 7.1rem;
+      margin: 0 auto;
+
+      p {
+        font-size: 0.24rem;
+        width: 7.1rem;
+        margin: 0 auto;
+        line-height: 0.4rem;
+      }
+      img:nth-child(3) {
+        margin: 0 auto;
+        width: 7rem;
+      }
+      img:nth-child(8) {
+        width: 4rem;
+        margin-left: 0;
+        margin: 0 auto;
+      }
+    }
+  }
+  // 底部
+  footer {
+    background-color: #dec6ac;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    ul {
+      width: 7.1rem;
+      margin: 0 auto;
+      li {
+        p {
+          font-size: 0.24rem;
+          width: 7.1rem;
+          line-height: 0.4rem;
+        }
+        h6 {
+          font-size: 0.45rem;
+          font-family: SourceHanSerifCN;
+          font-weight: 400;
+          color: #000000;
+          width: 7.1rem;
+          margin: 0 auto;
+          margin-top: 0.2rem;
+          margin-bottom: 0.2rem;
+        }
+        img{
+          width: 5rem;
+        }
+       
+      }
+      li:nth-child(1) {
+        margin-bottom: 0.35rem;
+      }
+      li:nth-child(2) {
+        margin-bottom: 0.25rem;
+      }
+      li:nth-child(3) {
+        margin-bottom: 0.35rem;
+      }
+      li:nth-child(4) {
+        margin-bottom: 0.35rem;
+      }
+    }
+    >img {
+      position: absolute;
+      width: 3.5rem;
+      bottom: 0;
+      right: 0.3rem;
+    }
+  }
+
+  // 悬浮导航栏
+  .suspension_nav {
+    width: 100%;
+    height: 1rem;
+    background-color: #c7d3e4;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999999999999;
+    ul {
+      display: flex;
+      flex-direction: inherit;
+      height: 100%;
+      li {
+        width: 25%;
+        height: 100%;
+        a {
+          width: 100%;
+          height: 100%;
+          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 0.9rem;
+          }
+          p {
+            font-size: 0.35rem;
+            color: #370000;
+            display: none;
+          }
+        }
+      }
+      li:hover {
+        a {
+          img {
+            display: none;
+          }
+          p {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
