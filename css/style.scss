@@ -627,12 +627,15 @@ p{
 }
 
 @media screen and (max-width: 750px) {
+  .outBody{
+    padding: .066667rem !important;
+  }
   p{
     line-height: .4rem !important;
     letter-spacing: 0;
   }
   .ym {
-    width: 7.5rem;
+    // width: 7.5rem;
     overflow: hidden;
     margin-top: 1rem;
   }
