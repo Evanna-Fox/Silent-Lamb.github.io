@@ -1,0 +1,438 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>silent lamb</title>
+<link rel="stylesheet" type="text/css" href="JS/jarallax.css">
+<link rel="stylesheet" media="only screen and (min-width: 768px)" type="text/css" href="CSS/one-type.css"/>
+<link rel="stylesheet" media="only screen and (max-width: 768px)" type="text/css" href="CSS/one_mobile.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<script language="javascript">
+		    var begintorain = true;
+            var curIndex=0;
+            var timeInterval=2500;
+            var arr=new Array();
+
+            arr[0]="img/headpic1.jpg";
+            arr[1]="img/headpic2.jpg";
+            setInterval(changeImg,timeInterval);
+            function changeImg(){   
+				var obj=document.getElementById("obj");                
+				if (curIndex==arr.length-1){        
+					curIndex=0;
+//					begintorain = false;
+				}   
+				else{        
+					curIndex+=1; 
+//					begintorain = true;
+				}    
+                obj.src=arr[curIndex];
+			}
+		    
+
+    </script>
+	
+</head>
+	
+
+<body>
+	<div class = "thehead">
+<!--		<img class = "select" src="img/select.png" >-->
+		<div class = "select"><a href="HTML/three.html" class = "selecttext">Third</a></div>
+		<div class = "select2"><a href="HTML/two.html" class =  "selecttext">Second</a></div>
+		<div class = "select"><a href="HTML/one.html" class =  "selecttext">First</a></div>
+	</div>
+	<div class = "secondpart" onscroll="get()">
+		<img class = "picture1" src ="img/headpic1.jpg" id = "obj" >
+<!--        <img src="img/titleyellow.png" class = "picture2" id = "gethideen">	-->
+	</div>
+<script>
+//	function get(){
+//		document.getElementById("gethideen").style.display="block";
+//	}
+</script>
+<!--	<div id="contents">-->
+     <canvas id="canvasThunder" class="ignore"></canvas>
+     <canvas id="canvasCloud" class="ignore"></canvas>
+     <canvas id="canvasRain" class="ignore"></canvas>
+<!--    </div>-->
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    var canvasThunder = document.getElementById('canvasThunder');
+    var canvasCloud = document.getElementById('canvasCloud');
+//    var canvasRain = document.getElementById('canvasRain');
+
+    if (!canvasThunder || !canvasThunder.getContext) {
+      return false;
+    }
+
+    /********************
+      Random Number
+    ********************/
+
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    /********************
+      Var
+    ********************/
+
+    var canvasThunderCtx = canvasThunder.getContext('2d');
+    var canvasCloudCtx = canvasCloud.getContext('2d');
+    var canvasRainCtx = canvasRain.getContext('2d');
+    var X = canvasThunder.width = canvasRain.width = canvasCloud.width = window.innerWidth;
+    var Y = canvasThunder.height = canvasRain.height = canvasCloud.height = window.innerHeight;
+
+    /********************
+      Animation
+    ********************/
+
+    window.requestAnimationFrame =
+      window.requestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function(cb) {
+        setTimeout(cb, 17);
+      };
+
+    /********************
+      Thunder
+    ********************/
+    
+    var thunderNum = 10;  
+    var thunders = [];
+     
+    function Thunder(ctx, x, y, r) {
+      this.ctx = ctx;
+      this.init(x, y, r);
+    }
+
+    Thunder.prototype.init = function(x, y, r) {
+      this.x = x;
+      this.y = y;
+      this.r = r;
+      this.l = rand(Y, Y * 3);
+      this.c = 'rgb(201, 162, 198)';
+    };
+
+    Thunder.prototype.draw = function() {
+      var ctx = this.ctx;
+      ctx.beginPath();
+      ctx.lineWidth = this.r;
+      ctx.strokeStyle = this.c;
+      ctx.moveTo(this.x, this.y);
+      this.x += rand(-10, 10);
+      this.y += rand(10, 15);
+      ctx.lineTo(this.x, this.y);
+      ctx.stroke();
+    };
+
+    Thunder.prototype.updateParams = function() {
+      if (this.y > this.l) { 
+        this.init(rand(0, X), rand(0, Y / 3), rand(1, 5));
+      }
+    };
+    
+    Thunder.prototype.render = function() {
+      this.updateParams();
+      this.draw();
+    };
+
+    for (var i = 0; i < thunderNum; i++) {
+      var thunder = new Thunder(canvasThunderCtx, rand(0, X), rand(0, Y / 3), rand(1, 5));
+      thunders.push(thunder);
+    }
+
+    /********************
+      Rain
+    ********************/
+    
+    var rainNum = 700;
+    var rains = [];
+    var rainSpeed = 20;
+    
+    function Rain(ctx, x, y, r) {
+      this.ctx = ctx;
+      this.init(x, y, r);
+    }
+
+    Rain.prototype.init = function(x, y, r) {
+      this.x = x;
+      this.y = y;
+      this.r = r;
+      this.c = 'rgb(179, 203, 255)';
+      this.v = {
+        y: rainSpeed
+      };
+    };
+
+    Rain.prototype.draw = function() {
+      var ctx = this.ctx;
+      ctx.beginPath();
+      ctx.fillStyle = this.c;
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+      ctx.fill();
+    };
+
+    Rain.prototype.updatePosition = function() {
+      this.y += this.v.y;
+    };
+
+    Rain.prototype.wrapPosition = function() {
+      if (this.y > Y) {
+        this.y = 0;
+      }
+    };
+
+    Rain.prototype.resize = function() {
+      this.x = rand(0, X);
+      this.y = rand(0, Y);
+    };
+
+    Rain.prototype.render = function() {
+      this.updatePosition();
+      this.wrapPosition();
+      this.draw();
+    };
+
+    for (var i = 0; i < rainNum; i++) {
+      var rain = new Rain(canvasRainCtx, rand(0, X), rand(0, Y), 1);
+      rains.push(rain);
+    }
+
+    /********************
+      Cloud
+    ********************/
+    
+    var cloudNum = 100;
+    var clouds = [];
+
+    function Cloud(ctx, x, y) {
+      this.ctx = ctx;
+      this.init(x, y);
+    }
+
+    Cloud.prototype.init = function(x, y) {
+      this.x = x;
+      this.y = y;
+      this.c = 'rgb(201, 162, 198)';
+      this.r = rand(100, 200);
+      this.v = {
+        x: 0.5,
+        y: 0
+      };
+      this.color = {
+        r: 0,
+        g: 0,
+        b: 0,
+        a: 1
+      };
+    };
+    
+    Cloud.prototype.wrapPosition = function(){
+      if (this.x - this.r > X) {
+        this.x = 0 - this.r;
+      }
+    };
+     
+    Cloud.prototype.updatePosition = function() {
+      this.x += this.v.x;
+    };
+    
+    Cloud.prototype.resize = function() {
+      this.x = rand(0 - 100, X + 100);
+      this.y = rand(0, Y / 2);
+    };
+
+    Cloud.prototype.render = function() {
+      this.updatePosition();
+      this.wrapPosition();
+      this.draw();
+    };
+	
+   if(begintorain){
+	  Cloud.prototype.gradient = function () {
+      var col = this.color.r + "," + this.color.g + "," + this.color.b;
+      var g = this.ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+      g.addColorStop(0, "rgba(" + col + ", " + (this.color.a * 1) + ")");
+      g.addColorStop(0.5, "rgba(" + col + ", " + (this.color.a * 0.5) + ")");
+      g.addColorStop(1, "rgba(" + col + ", " + (this.color.a * 0) + ")");
+      return g;
+    };
+   }
+    
+    
+    Cloud.prototype.draw = function() {
+      var ctx = this.ctx;
+      ctx.save();
+      ctx.scale(2, 1);
+      ctx.beginPath();
+      ctx.globalAlpha = 0.02;
+      ctx.fillStyle = this.gradient();
+      ctx.arc(this.x, this.y, this.r, Math.PI * 2, false);
+      ctx.fill();
+      ctx.scale(0.5, 1);
+      ctx.restore();
+    };
+
+    for (var i = 0; i < cloudNum; i++) {
+      var cloud = new Cloud(canvasCloudCtx, rand(0 - 100, X + 100), rand(0, Y / 2));
+      clouds.push(cloud);
+    }
+
+    /********************
+      Clear
+    ********************/
+
+    function clearCanvasThunder () {
+		
+      canvasThunderCtx.globalCompositeOperation = "darken";
+      canvasThunderCtx.globalAlpha = 0.01;
+      canvasThunderCtx.fillStyle = "rgb(19, 16, 65)";
+//      canvasThunderCtx.fillRect(0, 0, X, Y);
+      canvasThunderCtx.globalCompositeOperation = "source-over";
+      canvasThunderCtx.globalAlpha = 0;
+      if (Math.random() < 0.02) {
+        canvasThunderCtx.fillStyle = 'rgb(128, 128, 128)';
+        canvasThunderCtx.fillRect(0, 0, X, Y);
+      }
+    }
+
+    function clearCanvasRain () {
+      canvasRainCtx.clearRect(0, 0, X, Y);
+    }
+
+    function clearCanvasCloud () {
+      canvasCloudCtx.clearRect(0, 0, X, Y);
+    }
+
+    /********************
+      Render
+    ********************/
+    
+    function render(){
+      clearCanvasThunder();
+      clearCanvasCloud();
+      clearCanvasRain();
+      for (var i = 0; i < thunders.length; i++) {
+        thunders[i].render();
+      }
+      for (var i = 0; i < clouds.length; i++) {
+        clouds[i].render();
+      }
+      for (var i = 0; i < rains.length; i++) {
+        rains[i].render();
+      }
+      requestAnimationFrame(render);
+    }
+
+    render();
+
+    /********************
+      Event
+    ********************/
+    
+    function onResize() {
+      X = canvasThunder.width = canvasRain.width = canvasCloud.width = window.innerWidth;
+      Y = canvasThunder.height = canvasRain.height = canvasCloud.height = window.innerHeight;
+      for (var i = 0; i < rains.length; i++) {
+        rains[i].resize();
+      }
+    }
+
+    window.addEventListener('resize', function() {
+      onResize();
+    });
+
+  }); 
+})();
+</script>
+	<div>
+		<img src="img/titlenew.png" class = "picture2">
+<!--		<h2 >沉默的羔羊</h2>-->
+<!--		<h2>暴雷困局中的老人何去何从</h2>-->
+	</div>
+	<section>
+<!--		<div class = "pattern">-->
+		<div class = "box">
+			<h2 data-jarallax-element="0 200">羔羊的眼泪</h2>
+			<div class="container">
+				<div class = "imgBx jarallax">
+					<img src="img/BW5.jpg" class="jarallax-img">
+				</div>
+				<div class= "content" data-jarallax-element="-100 0">
+					<p>2021年1月19日下午1点，62岁的曹荣林脱去外衣，纵身一跃，从益阳资江大桥，跳入30米下深冬的江水。</p>
+					<p>据头条作者刘壹木讲述，曹荣林是一名杂工，积攒一生17万元给了益阳纳诺老年公寓，寄希望于住进去养老。<b>纳诺爆雷，美梦破灭，连同积蓄一起，什么也没有留下。</b></p>
+					<p>直到三天后被救援队捞起，曹荣林的妻子，因糖尿病并发症被紧急转院至益阳中心医院重症监护室，还在等着她的老伴送钱来医治。</p>
+					<p>曹荣林的纵身一跃揭开了<b>益阳市老年公寓骗局的冰山一角。</b>包括纳诺在内，益阳市数十家养老院先后爆雷，万名老人的后半生就此偏离了原本的安定。</p>
+				</div>
+			</div>
+		</div>
+<!--		</div>-->
+	</section>
+	<section>
+		<div class = "box">
+			<h2 data-jarallax-element="0 -200">羔羊的眼泪</h2>
+			<div class="container">
+				<div class = "imgBx jarallax">
+					<img src="img/BW6.jpg" class="jarallax-img">
+				</div>
+				<div class= "content" data-jarallax-element="-100 0">
+					<p>十一点，屋外已降至五度，南方没有供暖的室内，李桂兰在被窝里怎么也睡不踏实。眼泪不受控制一样从眼眶里溢出，她努力让自己抽泣的幅度小一点，生怕吵醒身边的老头子。</p>
+					<p>自从去年陆续得知自己分别存放在三家养老院的全部积蓄都要石沉大海之后，李桂兰数不清这是第几个她暗自垂泪的夜晚,李桂兰是湖南益阳市中药材厂的退休工人，年逾古稀</p>
+					<p>。她与丈夫都各领着每月两千多块钱的退休金，除去药物、水电费、食物等等开销，每个月所余不及千元。饶是如此，夫妻二人几十年省吃俭用也攒下了一笔几十万的存款作为养老费用，指着这笔钱安享晚年。</p>
+					<p>为了更好地利用这些存款，李桂兰开启了<b>长达八年的老人院“投资”之路。</b></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class = "box">
+			<h2 data-jarallax-element="0 200">羔羊的眼泪</h2>
+			<div class="container">
+				<div class = "imgBx jarallax">
+					<img src="img/BW7.jpg" class="jarallax-img">
+				</div>
+				<div class= "content" data-jarallax-element="-100 0">
+					<p>在多次尝到甜头后，李桂兰把养老院们当成了高收益的“银行”，她分别在三间不同的养老公寓存放了近五十万元，其中既有她与老伴的半生积蓄，也有女儿托付给她保管的十几万元。</p>
+					<p>2020年6月，李桂兰前往其中一家养老院——胭脂湖——索取一年前存入的本金和利息时却被告知：钱，要不回来了。</p>
+					<p>就这样，李桂兰与家人的积蓄沉入大海、一去不返。在医院做护工的郭月英近六十岁，是衡福海的受害者之一。</p>
+					<p>在多个同事朋友都向她提起“衡福海很好的，把钱存进去有利息，到时候住进去还有优惠”后，她也陆续将六万元的全部积蓄缴纳给了衡福海。</p>
+				</div>
+			</div>
+		</div>
+	</section>
+    <section>
+		<div class = "box">
+			<h2 data-jarallax-element="0 -200">羔羊的眼泪</h2>
+			<div class="container">
+				<div class = "imgBx jarallax">
+					<img src="img/BW8.jpg" class="jarallax-img">
+				</div>
+				<div class= "content" data-jarallax-element="-100 0">
+					<p>事实上，从2020年5月开始，衡福海就开始<b>拖欠归还</b>老人们在消费卡内的存款，8月5日，公司法人代表刘燕被控制；8月22日，益阳公安局朝阳分局发布公告，宣布衡福海“涉嫌非法吸收公众存款”。</p>
+					<p>据统计，衡福海的<b>受害者超过两千人，涉及资金上亿元.</b>2020年9月，朋友的一通电话让郭月英一时间丧失了思考的能力。对方告诉她：衡福海的老板出事了，钱要不回来，赶紧去报案</p>
+					<p>。郭月英一直不肯相信自己的钱就这么没了。原来人人赞好的养老去处变成一个骗局窝点，接踵而至的信息让老人无法承受。直到半个月前与儿子前往公安局时，她才终于接受这个现实：“我的钱死了”。</p>
+					<p>2021年元旦湖南益阳养老院的井喷式暴雷并不是个例。实际上，<b>全国各地的养老院</b>皆有暴雷现象出现，其中包括北京等<b>一线城市。</b></p>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+    <div class = "map">
+		<iframe src="https://dycharts.com/xshow/index.html?id=c_96888e2602dcf52448493ef294c44f6a" scrolling="no" frameborder="0" align="" class = "mapitself"></iframe>
+	</div>
+	<script src="JS/jarallax.js"></script>
+	<script src="JS/jarallax-element.js"></script>
+	<script type = "text/javascript">
+		jarallax(document.querySelectorAll('.jarallax'),{								   speed:0.5										   });
+	</script>
+	<div class = "tail">
+		<div class = "tiaozhuan"><a href="HTML/two.html" class = "tiaozhuantext">下一页</a></div>
+	</div>
+</body>
+</html>
